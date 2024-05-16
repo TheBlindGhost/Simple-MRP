@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MRP System</title>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <script src="script.js"></script>
+</head>
+<body>
+   <h1>MRP</h1>
+    <table>
+    <tr><td>
+        <h2>Table</h2><br><br>
+    <form>
+        <label for="lname">Delivery week</label><br>
+        <input type="number" id="d_date" value="1" min="1" max="10"><br><br>
+        
+        <label for="lname">Requiered amount</label><br>
+        <input type="number" id="r_amount" value="0" min="0"><br><br>
+
+        <label for="lname">Avaliable units</label><br>
+        <input type="number" id="a_units" value="0" min="0"><br><br>
+
+        <label for="fname">Production time</label><br>
+        <input type="number" id="p_time" value="0" min="0" max="9"><br><br>  
+    </form> 
+    </td>
+    </tr></table><table><tr>
+    <td>
+    <h2>Legs</h2>
+    <br><br>
+    <script>
+        form("leg_amount","leg_p_time")
+    </script>
+    </td><td>
+    <h2>Tabletop</h2>
+    <br><br>
+    <script>
+        form("tabletop_amount","tabletop_p_time")
+    </script>
+    </td></tr>
+    </table><table>
+    <tr><td>
+    <h2>Screws</h2>
+    <br><br>
+    <script>
+        form("screw_amount","screw_p_time")
+    </script>
+    </td><td>
+    <h2>Board</h2>
+    <br><br>
+    <script>
+        form("board_amount","board_p_time")
+    </script>
+    </td><td>
+    <h2>Strip</h2>
+    <br><br>
+    <script>
+        form("strip_amount","strip_p_time")
+    </script>
+    </td><td>
+    <h2>Countertop</h2>
+    <br><br>
+    <script>
+        form("countertop_amount","countertop_p_time")
+    </script>
+    </td></tr></table>
+    <br><br><br><br><br>
+    <button onclick="mrp()">Generate table content</button>
+    <button onclick="window.location.reload();">Reset</button>
+    <br><br><br><br><br>
+    <table>
+    <tr>
+        <td>
+            <script>
+                table_con("Table","nu_table_","au_table_","np_table_","a_table_","pd_table_")
+            </script>
+        </td>    
+    </tr>
+    </table><br><br><br><table>
+    <tr>
+        <td>
+            <script>
+                table_con("Legs","nu_legs_","au_legs_","np_legs_","a_legs_","pd_legs_")
+            </script>
+        </td>
+        <td>
+            <script>
+                table_con("Tabletops","nu_tabletop_","au_tabletop_","np_tabletop_","a_tabletop_","pd_tabletop_")
+            </script>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <script>
+                table_con("Screws","nu_screw_","au_screw_","np_screw_","a_screw_","pd_screw_")
+            </script>
+        </td>
+        <td>
+            <script>
+                table_con("Strip","nu_strip_","au_strip_","np_strip_","a_strip_","pd_strip_")
+            </script>
+        </td>
+    </tr><tr>
+        <td>
+            <script>
+                table_con("Board","nu_board_","au_board_","np_board_","a_board_","pd_board_")
+            </script>
+        </td>
+        
+        <td>
+            <script>
+                table_con("Countertop","nu_countertop_","au_countertop_","np_countertop_","a_countertop_","pd_countertop_")
+            </script>
+        </td>
+    </tr>
+    </table>
+
+
+<footer>Author: Mateusz Pietrusa</footer>
+
+
+
+
+</body>
+</html>

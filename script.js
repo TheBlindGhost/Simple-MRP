@@ -175,8 +175,9 @@ function mrp(){
     //Screws data
     let screw_amount = document.getElementById("screw_amount").value
     let screw_p_time = document.getElementById("screw_p_time").value
+    let screw_requiered_amount = ((n_units*4)-leg_amount)*4-screw_amount
     i = 1 
-
+    if (screw_requiered_amount<0){screw_requiered_amount=null}
     //Requiered units
     const nu_screw_a = to_array("nu_screw_");
     document.getElementById(nu_screw_a[(d_date-p_time)-leg_p_time]).innerHTML = ((n_units*4)-leg_amount)*4
@@ -190,24 +191,25 @@ function mrp(){
     
     //Needed for production
     const np_screw_a = to_array("np_screw_");
-    document.getElementById(np_screw_a[(d_date-p_time)-leg_p_time]).innerHTML = ((n_units*4)-leg_amount)*4-screw_amount
+    document.getElementById(np_screw_a[(d_date-p_time)-leg_p_time]).innerHTML = screw_requiered_amount
 
     //Order
     const a_screw_a = to_array("a_screw_");
-    document.getElementById(a_screw_a[((d_date-p_time)-leg_p_time)-screw_p_time]).innerHTML = ((n_units*4)-leg_amount)*4-screw_amount
+    document.getElementById(a_screw_a[((d_date-p_time)-leg_p_time)-screw_p_time]).innerHTML = screw_requiered_amount
     
 
     //Planed delivery
     const pd_screw_a = to_array("pd_screw_");
-    document.getElementById(pd_screw_a[(d_date-p_time)-leg_p_time]).innerHTML = ((n_units*4)-leg_amount)*4-screw_amount
+    document.getElementById(pd_screw_a[(d_date-p_time)-leg_p_time]).innerHTML = screw_requiered_amount
 
     //Board
 
     //Board data
     let board_amount = document.getElementById("board_amount").value
     let board_p_time = document.getElementById("board_p_time").value
+    let board_requiered_amount = ((n_units*4)-leg_amount)-board_amount
     i = 1 
-
+    if (board_requiered_amount<0){board_requiered_amount=null}
     //Requiered units
     const nu_board_a = to_array("nu_board_");
     document.getElementById(nu_board_a[(d_date-p_time)-leg_p_time]).innerHTML = (n_units*4)-leg_amount
@@ -221,25 +223,26 @@ function mrp(){
 
     //Needed for production
     const np_board_a = to_array("np_board_");
-    document.getElementById(np_board_a[d_date-p_time-leg_p_time]).innerHTML = ((n_units*4)-leg_amount)-board_amount
+    document.getElementById(np_board_a[d_date-p_time-leg_p_time]).innerHTML = board_requiered_amount
 
 
     //Order
     const a_board_a = to_array("a_board_");
-    document.getElementById(a_board_a[((d_date-p_time)-leg_p_time)-board_p_time]).innerHTML = ((n_units*4)-leg_amount)-board_amount
+    document.getElementById(a_board_a[((d_date-p_time)-leg_p_time)-board_p_time]).innerHTML = board_requiered_amount
     
 
     //Planed delivery
     const pd_board_a = to_array("pd_board_");
-    document.getElementById(pd_board_a[d_date-p_time-leg_p_time]).innerHTML = ((n_units*4)-leg_amount)-board_amount
+    document.getElementById(pd_board_a[d_date-p_time-leg_p_time]).innerHTML = board_requiered_amount
 
     //Strip
 
     //Strip data
     let strip_amount = document.getElementById("strip_amount").value
     let strip_p_time = document.getElementById("strip_p_time").value
+    let strip_requiered_amount = (n_units-tabletop_amount)*4-strip_amount
     i = 1 
-
+    if(strip_requiered_amount<0){strip_requiered_amount = null}
     //Requiered units
     const nu_strip_a = to_array("nu_strip_");
     document.getElementById(nu_strip_a[(d_date-p_time)-tabletop_p_time]).innerHTML = (n_units-tabletop_amount)*4
@@ -254,23 +257,24 @@ function mrp(){
 
     //Needed for production
     const np_strip_a = to_array("np_strip_");
-    document.getElementById(np_strip_a[(d_date-p_time)-tabletop_p_time]).innerHTML = (n_units-tabletop_amount)*4-strip_amount
+    document.getElementById(np_strip_a[(d_date-p_time)-tabletop_p_time]).innerHTML = strip_requiered_amount
 
     //Order
     const a_strip_a = to_array("a_strip_");
-    document.getElementById(a_strip_a[((d_date-p_time)-tabletop_p_time)-strip_p_time]).innerHTML = (n_units-tabletop_amount)*4-strip_amount
+    document.getElementById(a_strip_a[((d_date-p_time)-tabletop_p_time)-strip_p_time]).innerHTML = strip_requiered_amount
     
     //Planed delivery
     const pd_strip_a = to_array("pd_strip_");
-    document.getElementById(pd_strip_a[(d_date-p_time)-tabletop_p_time]).innerHTML = (n_units-tabletop_amount)*4-strip_amount
+    document.getElementById(pd_strip_a[(d_date-p_time)-tabletop_p_time]).innerHTML = strip_requiered_amount
     
     //Counteryop
 
     //Countertop data
     let countertop_amount = document.getElementById("countertop_amount").value
     let countertop_p_time = document.getElementById("countertop_p_time").value
+    let countertop_requiered_amount = (n_units-tabletop_amount)-countertop_amount
     i = 1 
-
+    if (countertop_requiered_amount<0){countertop_requiered_amount = null}
     //Requiered units
     const nu_countertop_a = to_array("nu_countertop_");
     document.getElementById(nu_countertop_a[(d_date-p_time)-tabletop_p_time]).innerHTML = (n_units-tabletop_amount)
@@ -284,14 +288,14 @@ function mrp(){
 
     //Needed for production
     const np_countertop_a = to_array("np_countertop_");
-    document.getElementById(np_countertop_a[d_date-p_time-tabletop_p_time]).innerHTML = (n_units-tabletop_amount)-countertop_amount
+    document.getElementById(np_countertop_a[d_date-p_time-tabletop_p_time]).innerHTML = countertop_requiered_amount
 
     //Order
     const a_countertop_a = to_array("a_countertop_");
-    document.getElementById(a_countertop_a[((d_date-p_time)-tabletop_p_time)-countertop_p_time]).innerHTML = (n_units-tabletop_amount)-countertop_amount
+    document.getElementById(a_countertop_a[((d_date-p_time)-tabletop_p_time)-countertop_p_time]).innerHTML = countertop_requiered_amount
     
     //Planed delivery
     const pd_countertop_a = to_array("pd_countertop_");
-    document.getElementById(pd_countertop_a[d_date-p_time-tabletop_p_time]).innerHTML = (n_units-tabletop_amount)-countertop_amount
+    document.getElementById(pd_countertop_a[d_date-p_time-tabletop_p_time]).innerHTML = countertop_requiered_amount
     };
 };
